@@ -13,26 +13,35 @@ export class ProductComponent implements OnInit {
   product: any = {};
 
   constructor(private http: Http) { 
-    console.log('test');
+
     this.getCatalogEntryView();
     this.getProduct();
-
   }
 
-getProduct() {
-  return this.http.get(this.productsAPI)
-    .map((res: Response) => res.json())
-}
+  getProduct() {
+    return this.http.get(this.productsAPI)
+      .map((res: Response) => res.json())
+  }
 
-getCatalogEntryView() {
-  this.getProduct().subscribe(product => {
-    console.log(product);
-    this.product = product
-  })
-}
+  getCatalogEntryView() {
+    this.getProduct().subscribe(product => {
+      this.product = product
+    })
+  }
+
+  quantity = 1;
+  quantityDecrease() {
+    if(this.quantity > 0){
+      this.quantity--;
+    }
+  }
+  quantityIncrease() {
+    this.quantity++;
+  }
 
 
   ngOnInit() {
+
   }
 
 }

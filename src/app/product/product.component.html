@@ -9,6 +9,7 @@
 
         <img src="http://target.scene7.com/is/image/Target/14263758" width="380">
 
+
       </div>
 
 
@@ -34,11 +35,26 @@
         <hr />
       </div>
       <div class="quantity">
-
+        <div class="row quantity-row">
+          <div class="quantity-border">
+            <div class="quantity-button">
+              <div class="row vertical-center">
+                <div class="col quantity-word">
+                  <p>quantity:</p>
+                </div>
+                <div class="col vertical-center" style="text-align:right;">
+                  <a (click)="quantityDecrease()"><img src="../../assets/minus.png" border="0" width="30" height="30"></a>
+                    {{quantity}}
+                  <a (click)="quantityIncrease()"><img src="../../assets/plus.png" border="0" width="30" height="30"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="cart-buttons">
-        <div class="row verticle-top">
+        <div class="row verticle-top padding-between">
           <div class="col-6 horizontal-center">
             <a href="#" class="btn btn-dark btn-block">PICK UP IN STORE</a>
             <p class="very-small-font"><strong><a href="#" class="gray-link">find in a store</a></strong></p>
@@ -50,7 +66,7 @@
       </div>
 
       <div class="return-policy">
-        <div class="row vertical-center save-div">
+        <div class="row vertical-center padding-row">
           <div class="vertical-center" style="width:auto">
             <h5>returns |</h5>
           </div>
@@ -63,7 +79,7 @@
       </div>
 
       <div class="save-buttons">
-        <div class="row">
+        <div class="row save-row">
           <div class="col-4 save-div">
             <a href="#" class="btn btn-light btn-sm btn-block">ADD TO REGISTRY</a>
           </div>
@@ -78,18 +94,11 @@
 
       <div class="product-highlights">
         <h2>Product Highlights</h2>
-        <ul>
-          <li><strong>Wattage Output:</strong> 1100 Watts</li>
-          <li><strong>Number of Speeds:</strong> 3 </li>
-          <li><strong>Capacity (volume):</strong> 72.0 Oz.</li>
-          <li><strong>Appliance Capabilities:</strong> Blends</li>
-          <li><strong>Includes:</strong> Travel Lid</li>
-          <li><strong>Material:</strong> Plastic</li>
-          <li><strong>Finish:</strong> Painted</li>
-          <li><strong>Metal Finish:</strong> Chrome</li>
-          <li><strong>Safety and Security Features:</strong> Non-Slip Base</li>
-          <li><strong>Care and Cleaning:</strong> Easy-To-Clean, Dishwasher Safe Parts</li>
-        </ul>
+          <ul>
+            <ng-container *ngFor="let feature of product.CatalogEntryView[0].ItemDescription[0]?.features">
+              <li [innerHTML]="feature"></li>
+            </ng-container>
+          </ul>
       </div>
 
     </div>
@@ -103,5 +112,12 @@
   </div>
 
 </div>
+
+{{product.CatalogEntryView[0]?.DPCI}}<br><br>
+
+
+{{product.CatalogEntryView[0].ItemDescription[0]?.features[0]}}
+
+
 
 
