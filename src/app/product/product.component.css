@@ -40,7 +40,14 @@ p {
     text-align: center;
     padding-bottom: 25px;
 }
-.save-row{
+.main-back {
+    width:380px;
+    height:380px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+.save-row {
     padding:12px;
 }
 .save-div {

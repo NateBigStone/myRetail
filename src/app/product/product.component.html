@@ -5,8 +5,12 @@
         <h3>{{product.CatalogEntryView[0]?.title}}</h3>
       </div>
       <div class="images horizontal-center vertical-center">
-        <div class="main-image">
-          <img src="{{product.CatalogEntryView[0].Images[0].PrimaryImage[0]?.image}}" width="380">
+
+        <div class="main-image horizontal-center">
+
+          <div [ngStyle]="{ 'background-image': 'url(' + product.CatalogEntryView[0].Images[0].PrimaryImage[0].image + ')' }"  class="main-back">
+            <img src="{{ theMainImage }}" width="380" height="380 "border="0">
+          </div>
         </div>
         <div>
           <div
@@ -27,7 +31,9 @@
           </ng-template>
           <ng-template #item let-item let-i="index">
             <div class="thumbnails">
-              <img src="{{ item.image }}" width="100">
+              <a (click)="mainImage(this.item.image)">
+                <img src="{{ item.image }}" width="100">
+              </a>
             </div>
           </ng-template>
       </div>
