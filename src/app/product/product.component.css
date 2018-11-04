@@ -87,6 +87,11 @@ p {
     margin-left: 0px;
     margin-right: 20px;
 }
+.product-list {
+    padding-top: 15px;
+    padding-left: 15px;
+    margin: 0;
+}
 .slides-wrapper{
     vertical-align: center;
 }
