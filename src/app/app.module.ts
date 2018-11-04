@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 
 
 
@@ -20,6 +21,7 @@ import { ReviewsComponent } from './product/reviews/reviews.component';
   imports: [
     BrowserModule,
     HttpModule,
+    Ng2CarouselamosModule
   ],
   providers: [ProductComponent],
   bootstrap: [AppComponent]

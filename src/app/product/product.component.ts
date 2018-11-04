@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -11,6 +12,8 @@ export class ProductComponent implements OnInit {
 
   private productsAPI = 'http://localhost:4200/assets/item-data.json';
   product: any = {};
+  //mainImage = this.product.CatalogEntryView[0].Images[0].PrimaryImage[0].image;
+  quantity = 1;
 
   constructor(private http: Http) { 
 
@@ -29,7 +32,6 @@ export class ProductComponent implements OnInit {
     })
   }
 
-  quantity = 1;
   quantityDecrease() {
     if(this.quantity > 0){
       this.quantity--;

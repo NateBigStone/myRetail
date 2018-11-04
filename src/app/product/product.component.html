@@ -6,14 +6,41 @@
       </div>
       <div class="images horizontal-center vertical-center">
 
+        <div class="main-image">
+          <img src="{{product.CatalogEntryView[0].Images[0].PrimaryImage[0].image}}" width="380">
+        </div>
+        <div>
 
-        <img src="http://target.scene7.com/is/image/Target/14263758" width="380">
+          <div
+            ng2-carouselamos
+            class="slides-wrapper"
+            [items]="product.CatalogEntryView[0].Images[0]?.AlternateImages"
+            [width]="900"
+            [$prev]="prev"
+            [$next]="next"
+            [$item]="item"
+          >
+          </div>
+        
 
+          <ng-template #prev>
+            <img src="../../assets/left-arrow.png" id="left" />
+          </ng-template>
+          <ng-template #next>
+            <img src="../../assets/right-arrow.png" id="right" />
+          </ng-template>
+          <ng-template #item let-item let-i="index">
+
+            <div class="thumbnails">
+              <img src="{{ item.image }}" width="100">
+            </div>
+
+          </ng-template>
 
       </div>
 
 
-
+      </div>
     </div>
     <div class="col-12 col-md-6">
       <div class="price">
@@ -42,9 +69,11 @@
                 <div class="col quantity-word">
                   <p>quantity:</p>
                 </div>
-                <div class="col vertical-center" style="text-align:right;">
+                <div class="buttoners vertical-center">
                   <a (click)="quantityDecrease()"><img src="../../assets/minus.png" border="0" width="30" height="30"></a>
-                    {{quantity}}
+                    <strong>
+                      {{quantity}}
+                    </strong>
                   <a (click)="quantityIncrease()"><img src="../../assets/plus.png" border="0" width="30" height="30"></a>
                 </div>
               </div>
@@ -81,13 +110,13 @@
       <div class="save-buttons">
         <div class="row save-row">
           <div class="col-4 save-div">
-            <a href="#" class="btn btn-light btn-sm btn-block">ADD TO REGISTRY</a>
+            <a href="#" class="btn btn-light btn-sm btn-block"><small>ADD TO REGISTRY</small></a>
           </div>
           <div class="col-4 save-div">
-            <a href="#" class="btn btn-light btn-sm btn-block">ADD TO LIST</a>
+            <a href="#" class="btn btn-light btn-sm btn-block"><small>ADD TO LIST</small></a>
           </div>
           <div class="col-4 save-div">
-            <a href="#" class="btn btn-light btn-sm btn-block">SHARE</a>
+            <a href="#" class="btn btn-light btn-sm btn-block"><small>SHARE</small></a>
           </div>
         </div>
       </div>
@@ -113,7 +142,7 @@
 
 </div>
 
-{{product.CatalogEntryView[0]?.DPCI}}<br><br>
+<br><br>
 
 
 {{product.CatalogEntryView[0].ItemDescription[0]?.features[0]}}
