@@ -2,55 +2,97 @@
   <div class="row">
     <div class="col-12 col-md-6">
       <div class="title">
-        <h3>Ninja&trade; Professional Blender with Single Serve Blending Cups</h3>
+        <h3>{{product.CatalogEntryView[0]?.title}}</h3>
       </div>
       <div class="images horizontal-center vertical-center">
 
+        <div class="main-image horizontal-center">
 
-        <img src="http://target.scene7.com/is/image/Target/14263758" width="380">
-
+          <div [ngStyle]="{ 'background-image': 'url(' + product.CatalogEntryView[0].Images[0].PrimaryImage[0].image + ')' }"  class="main-back">
+            <img src="{{ theMainImage }}" width="380" height="380 "border="0">
+          </div>
+        </div>
+        <div>
+          <div
+            ng2-carouselamos
+            class="slides-wrapper"
+            [items]="product.CatalogEntryView[0].Images[0]?.AlternateImages"
+            [width]="900"
+            [$prev]="prev"
+            [$next]="next"
+            [$item]="item"
+          >
+          </div>
+          <ng-template #prev>
+            <img src="../../assets/left-arrow.png" id="left" />
+          </ng-template>
+          <ng-template #next>
+            <img src="../../assets/right-arrow.png" id="right" />
+          </ng-template>
+          <ng-template #item let-item let-i="index">
+            <div class="thumbnails">
+              <a (click)="mainImage(this.item.image)">
+                <img src="{{ item.image }}" width="100">
+              </a>
+            </div>
+          </ng-template>
       </div>
-
-
-
+      </div>
     </div>
     <div class="col-12 col-md-6">
       <div class="price">
-        <font class="large-font">$139.99</font> <font class="very-small-font">Online Price</font>
+        <font class="large-font">{{product.CatalogEntryView[0].Offers[0].OfferPrice[0]?.formattedPriceValue}}</font> <font class="very-small-font">{{product.CatalogEntryView[0].Offers[0].OfferPrice[0]?.priceQualifier}}</font>
       </div>
       <div class="promotion">
-        <hr />
-        
+        <hr /> 
         <ul>
-          <li>
-            SPEND $50, GET FREE SHIPPING
-          </li>
-          <li>
-            $25 gift card with purchase of a select Ninja Blender
-          </li>
+          <ng-container *ngFor="let promo of product.CatalogEntryView[0]?.Promotions">
+              <li [innerHTML]="promo.Description[0].shortDescription"></li>
+          </ng-container>
         </ul>
-
-
         <hr />
       </div>
       <div class="quantity">
-
-      </div>
-
-      <div class="cart-buttons">
-        <div class="row verticle-top">
-          <div class="col-6 horizontal-center">
-            <a href="#" class="btn btn-dark btn-block">PICK UP IN STORE</a>
-            <p class="very-small-font"><strong><a href="#" class="gray-link">find in a store</a></strong></p>
-          </div>
-          <div class="col-6">
-            <a href="#" class="btn btn-danger btn-block">ADD TO CART</a>
+        <div class="row quantity-row">
+          <div class="quantity-border">
+            <div class="quantity-button">
+              <div class="row vertical-center">
+                <div class="col quantity-word">
+                  <p>quantity:</p>
+                </div>
+                <div class="buttoners vertical-center">
+                  <a (click)="quantityDecrease()"><img src="../../assets/minus.png" border="0" width="30" height="30"></a>
+                    <strong>
+                      {{quantity}}
+                    </strong>
+                  <a (click)="quantityIncrease()"><img src="../../assets/plus.png" border="0" width="30" height="30"></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <div class="cart-buttons">
+        <div class="row verticle-top padding-between">
 
+            <div class="col-6 horizontal-center" 
+            *ngIf="product.CatalogEntryView[0].purchasingChannelCode === '0' ||
+            product.CatalogEntryView[0].purchasingChannelCode === '2'">
+              <a href="#" class="btn btn-dark btn-block">PICK UP IN STORE</a>
+              <p class="very-small-font"><strong><a href="#" class="gray-link">find in a store</a></strong></p>
+            </div>
+
+          <div class="col-6"  
+            *ngIf="product.CatalogEntryView[0].purchasingChannelCode === '0' ||
+            product.CatalogEntryView[0].purchasingChannelCode === '1'">
+            <a href="#" class="btn btn-danger btn-block">ADD TO CART</a>
+          </div>
+
+
+        </div>
+      </div>
       <div class="return-policy">
-        <div class="row vertical-center save-div">
+        <div class="row vertical-center padding-row">
           <div class="vertical-center" style="width:auto">
             <h5>returns |</h5>
           </div>
@@ -61,47 +103,32 @@
           </div>
         </div>
       </div>
-
       <div class="save-buttons">
-        <div class="row">
+        <div class="row save-row">
           <div class="col-4 save-div">
-            <a href="#" class="btn btn-light btn-sm btn-block">ADD TO REGISTRY</a>
+            <a href="#" class="btn btn-light btn-sm btn-block"><small>ADD TO REGISTRY</small></a>
           </div>
           <div class="col-4 save-div">
-            <a href="#" class="btn btn-light btn-sm btn-block">ADD TO LIST</a>
+            <a href="#" class="btn btn-light btn-sm btn-block"><small>ADD TO LIST</small></a>
           </div>
           <div class="col-4 save-div">
-            <a href="#" class="btn btn-light btn-sm btn-block">SHARE</a>
+            <a href="#" class="btn btn-light btn-sm btn-block"><small>SHARE</small></a>
           </div>
         </div>
       </div>
-
       <div class="product-highlights">
-        <h2>Product Highlights</h2>
-        <ul>
-          <li><strong>Wattage Output:</strong> 1100 Watts</li>
-          <li><strong>Number of Speeds:</strong> 3 </li>
-          <li><strong>Capacity (volume):</strong> 72.0 Oz.</li>
-          <li><strong>Appliance Capabilities:</strong> Blends</li>
-          <li><strong>Includes:</strong> Travel Lid</li>
-          <li><strong>Material:</strong> Plastic</li>
-          <li><strong>Finish:</strong> Painted</li>
-          <li><strong>Metal Finish:</strong> Chrome</li>
-          <li><strong>Safety and Security Features:</strong> Non-Slip Base</li>
-          <li><strong>Care and Cleaning:</strong> Easy-To-Clean, Dishwasher Safe Parts</li>
-        </ul>
+        <h1>product highlights</h1>
+          <ul class="product-list">
+            <ng-container *ngFor="let feature of product.CatalogEntryView[0].ItemDescription[0]?.features">
+              <li [innerHTML]="feature"></li>
+            </ng-container>
+          </ul>
       </div>
-
     </div>
   </div>
   <div class="row">
     <div class="reviews col-12 col-md-6">
-
-
-
     </div>
   </div>
-
 </div>
-
-
+{{product.CatalogEntryView[0]?.purchasingChannelCode}}

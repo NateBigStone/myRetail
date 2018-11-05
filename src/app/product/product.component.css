@@ -17,11 +17,18 @@
 .vertical-bottom {
     vertical-align: bottom  !important;
 }
+.padding-row {
+    padding: 15px;
+}
+.padding-between {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 .very-small-font {
     font-size: 10px;
 }
 .large-font {
-    font-size: 24px;
+    font-size: 28px;
 }
 .gray-link {
     color: #696969;
@@ -29,6 +36,91 @@
 p {
     margin: 0px;
 }
+.title{
+    text-align: center;
+    padding-bottom: 25px;
+}
+.main-back {
+    width:380px;
+    height:380px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+.save-row {
+    padding:12px;
+}
 .save-div {
     padding: 3px;
+}
+.promotion {
+    color: red;
+}
+.promotion ul{
+    list-style:none;
+    margin: 0 0 1em 0;
+    padding: 0;
+}
+.promotion ul li{
+    line-height:1.3em;
+    margin: 5px 0;
+    padding: 0 0 0 28px;
+    background:url('../../assets/shoptagico.png') no-repeat 0 1px;
+}
+.quantity-row {
+    padding: 15px;
+}
+.quantity-border {
+    width: 50%;
+    padding-right:15px
+}
+.quantity-button {
+    border: 1px;
+    border-style: solid;
+    border-color: gainsboro;
+    border-radius: 3px;
+    padding: 5px;
+}
+.quantity-word {
+    padding: 5px 5px 5px 20px;
+}
+.quantity-word p {
+    text-align: left;
+    font-size: 12px;
+    color: grey;
+}
+.buttoners {
+    text-align:right;
+    margin-left: 0px;
+    margin-right: 20px;
+}
+.product-list {
+    padding-top: 15px;
+    padding-left: 15px;
+    margin: 0;
+}
+.slides-wrapper{
+    vertical-align: center;
+}
+.thumbnails {
+    max-width:300px;
+    height:120px;
+    text-align: center;
+    vertical-align: center;
+    padding: 10px;
+    margin: 25px;
+}
+#left, #right { 
+    padding-top: 47px;
+    padding-bottom: 47px;
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: white;
+}
+.main-image {
+    padding-top:25px;
+    padding-bottom: 25px;
+}
+.product-highlights {
+    margin-top: 15px;
 }
