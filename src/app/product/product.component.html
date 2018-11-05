@@ -74,16 +74,23 @@
       </div>
       <div class="cart-buttons">
         <div class="row verticle-top padding-between">
-          <div class="col-6 horizontal-center">
-            <a href="#" class="btn btn-dark btn-block">PICK UP IN STORE</a>
-            <p class="very-small-font"><strong><a href="#" class="gray-link">find in a store</a></strong></p>
-          </div>
-          <div class="col-6">
+
+            <div class="col-6 horizontal-center" 
+            *ngIf="product.CatalogEntryView[0].purchasingChannelCode === '0' ||
+            product.CatalogEntryView[0].purchasingChannelCode === '2'">
+              <a href="#" class="btn btn-dark btn-block">PICK UP IN STORE</a>
+              <p class="very-small-font"><strong><a href="#" class="gray-link">find in a store</a></strong></p>
+            </div>
+
+          <div class="col-6"  
+            *ngIf="product.CatalogEntryView[0].purchasingChannelCode === '0' ||
+            product.CatalogEntryView[0].purchasingChannelCode === '1'">
             <a href="#" class="btn btn-danger btn-block">ADD TO CART</a>
           </div>
+
+
         </div>
       </div>
-
       <div class="return-policy">
         <div class="row vertical-center padding-row">
           <div class="vertical-center" style="width:auto">
@@ -124,3 +131,4 @@
     </div>
   </div>
 </div>
+{{product.CatalogEntryView[0]?.purchasingChannelCode}}
