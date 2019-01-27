@@ -418,25 +418,16 @@
     {
      "AlternateImages": [
       {
-       "image": "http:\/\/target.scene7.com\/is\/image\/Target\/14263758_Alt01"
+       "image": "http:\/\/target.scene7.com\/is\/image\/Target\/GUEST_83705133-fb5e-4357-be37-94ae1392b915"
       },
       {
-       "image": "http:\/\/target.scene7.com\/is\/image\/Target\/14263758_Alt02"
+       "image": "http:\/\/target.scene7.com\/is\/image\/Target\/GUEST_40a6190c-d9e3-4ddf-b06d-6db6a13927f3"
       },
       {
-       "image": "http:\/\/target.scene7.com\/is\/image\/Target\/14263758_Alt03"
+       "image": "http:\/\/target.scene7.com\/is\/image\/Target\/GUEST_9cabc94e-a3ad-43f5-9776-41c77bef79e9"
       },
       {
-       "image": "http:\/\/target.scene7.com\/is\/image\/Target\/14263758_Alt04"
-      },
-      {
-       "image": "http:\/\/target.scene7.com\/is\/image\/Target\/14263758_Alt05"
-      },
-      {
-       "image": "http:\/\/target.scene7.com\/is\/image\/Target\/14263758_Alt06"
-      },
-      {
-       "image": "http:\/\/target.scene7.com\/is\/image\/Target\/14263758_Alt07"
+       "image": "http:\/\/target.scene7.com\/is\/image\/Target\/14263758"
       }
      ],
      "PrimaryImage": [
@@ -445,7 +436,7 @@
       }
      ],
 
-     "imageCount": "8",
+     "imageCount": "5",
      "source": "internal"
     }
    ],
